@@ -1,6 +1,9 @@
 const registrationReducer = (
   state = {
-    full_name: "DEFAULT_NAME"
+    full_name: "DEFAULT_NAME",
+    city: "DEFAULT_CITY",
+    phone: "DEFAULT_PHONE",
+    email: "DEFAULT_EMAIL"
   },
   action
 ) => {
