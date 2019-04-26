@@ -25,7 +25,7 @@ class RegistrationForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitRegistrationData(this.state);
-    this.props.history.push("/dashboard");
+    this.props.history.push("/confirmation");
   }
 
   render() {
@@ -99,7 +99,7 @@ class RegistrationForm extends Component {
           </div>
           <div>
             <button style={styles.submitButton} type="submit">
-              Register
+              Register >>
             </button>
           </div>
         </form>
@@ -132,7 +132,8 @@ const styles = {};
 styles.registrationForm = {
   color: "#663399",
   textAlign: "left",
-  margin: "10px auto"
+  marginTop: "10px",
+  marginLeft: "300px"
 };
 
 styles.label = {
@@ -151,5 +152,7 @@ styles.input = {
 styles.submitButton = {
   border: "none",
   background: "#663399",
-  color: "white"
+  color: "white",
+  padding: "10px",
+  fontSize: "1.2em"
 };

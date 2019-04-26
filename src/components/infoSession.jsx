@@ -21,8 +21,13 @@ export default InfoSession;
 const styles = {};
 
 styles.eventBox = {
+  display: "inline-block",
+  margin: "0 auto",
   backgroundColor: "#663399",
   color: "white",
   padding: "10px",
-  margin: "10px"
+  margin: "10px",
+  width: "200px",
+  height: "200px",
+  fontSize: "14px"
 };

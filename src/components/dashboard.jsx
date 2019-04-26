@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { submitRegistrationData } from "./../actions/registrationActions";
+import Header from "./header";
+import Footer from "./footer";
 
 class Dashboard extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div style={styles.pageContainer} className="App">
+        <div style={styles.header}>
+          <Header />
+        </div>
         <div style={styles.progressContainer}>
           <div
             style={{
@@ -70,6 +75,9 @@ class Dashboard extends Component {
         </div>
         <div>training: {this.props.data.training ? "true" : "false"}</div>
         <div>match: {this.props.data.match ? "true" : "false"}</div>
+        <div style={styles.footer}>
+          <Footer />
+        </div>
       </div>
     );
   }
@@ -103,4 +111,32 @@ styles.progressContainer = {
   width: "90%",
   gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
   height: "30px"
+};
+
+styles.pageContainer = {
+  position: "relative",
+  minHeight: "100vh"
+};
+
+styles.contentWrap = {
+  paddingBottom: "400px"
+};
+
+styles.footer = {
+  position: "absolute",
+  bottom: 0,
+  width: "100%"
+};
+
+styles.registrationGrid = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr"
+};
+
+styles.yourInfoSession = {
+  textAlign: "center",
+  margin: "20px",
+  color: "#663399",
+  fontWeight: 800,
+  fontSize: " 1.5em"
 };

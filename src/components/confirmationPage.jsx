@@ -1,33 +1,33 @@
-import React from "react";
+import React, { Component } from "react";
 import RegistrationForm from "./registrationForm";
 import Header from "./header";
 import Footer from "./footer";
 import InfoSession from "./infoSession";
+import { Link } from "react-router-dom";
 
-function RegistrationPage() {
-  return (
-    <div style={styles.pageContainer} className="App">
-      <div style={styles.header}>
-        <Header />
-      </div>
-      <div style={styles.contentWrap}>
-        <div style={styles.registrationGrid}>
-          <RegistrationForm />
-          <div style={styles.yourInfoSession}>
-            Your Info Session:
-            <br />
-            <InfoSession />
-          </div>
+class ConfirmationPage extends Component {
+  state = {};
+  render() {
+    return (
+      <div style={styles.pageContainer} className="App">
+        <div style={styles.header}>
+          <Header />
+        </div>
+        <div style={styles.contentWrap}>
+          <div>CONFIRMATION PAGE</div>
+          <InfoSession />
+          <br />
+          <Link to={`/dashboard`}>CONFIRM</Link>
+        </div>
+        <div style={styles.footer}>
+          <Footer />
         </div>
       </div>
-      <div style={styles.footer}>
-        <Footer />
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default RegistrationPage;
+export default ConfirmationPage;
 
 const styles = {};
 
