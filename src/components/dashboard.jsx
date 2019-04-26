@@ -7,6 +7,8 @@ import {
 import Header from "./header";
 import Footer from "./footer";
 import ProgressBar from "./progressBar";
+import InfoSession from "./infoSession";
+import Dashboard1 from "./dashboard1";
 
 class Dashboard extends Component {
   state = {};
@@ -21,35 +23,65 @@ class Dashboard extends Component {
         <div style={styles.header}>
           <Header />
         </div>
-        <ProgressBar
-          big101={this.props.data.big101}
-          application={this.props.data.application}
-          vss={this.props.data.vss}
-          assessmentInterview={this.props.data.assessmentInterview}
-          training={this.props.data.training}
-          match={this.props.data.match}
-        />
-        DASHBOARD
-        <div>name: {this.props.data.full_name}</div>
-        <div>city: {this.props.data.city}</div>
-        <div>phone: {this.props.data.phone}</div>
-        <div>email: {this.props.data.email}</div>
-        <div>step: {this.props.data.step}</div>
-        <div
-          onClick={e => {
-            this.updateProgress("big101");
-          }}
-        >
-          big101: {this.props.data.big101 ? "true" : "false"}
+        <div style={styles.contentWrap}>
+          <ProgressBar
+            big101={this.props.data.big101}
+            application={this.props.data.application}
+            vss={this.props.data.vss}
+            assessmentInterview={this.props.data.assessmentInterview}
+            training={this.props.data.training}
+            match={this.props.data.match}
+          />
+          <Dashboard1 />
+          <div>
+            {this.props.data.full_name} | {this.props.data.city} |{" "}
+            {this.props.data.phone} | {this.props.data.email}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("big101");
+            }}
+          >
+            Info Session Attended: {this.props.data.big101 ? "true" : "false"}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("application");
+            }}
+          >
+            application: {this.props.data.application ? "true" : "false"}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("vss");
+            }}
+          >
+            vss: {this.props.data.vss ? "true" : "false"}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("assessmentInterview");
+            }}
+          >
+            assessmentInterview:{" "}
+            {this.props.data.assessmentInterview ? "true" : "false"}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("training");
+            }}
+          >
+            training: {this.props.data.training ? "true" : "false"}
+          </div>
+          <div
+            onClick={e => {
+              this.updateProgress("match");
+            }}
+          >
+            match: {this.props.data.match ? "true" : "false"}
+          </div>
         </div>
-        <div>application: {this.props.data.application ? "true" : "false"}</div>
-        <div>vss: {this.props.data.vss ? "true" : "false"}</div>
-        <div>
-          assessmentInterview:{" "}
-          {this.props.data.assessmentInterview ? "true" : "false"}
-        </div>
-        <div>training: {this.props.data.training ? "true" : "false"}</div>
-        <div>match: {this.props.data.match ? "true" : "false"}</div>
+
         <div style={styles.footer}>
           <Footer />
         </div>
