@@ -89,8 +89,8 @@ styles.requestCallText = {
 styles.orangeBox = {
   margin: "20px auto",
   width: "660px",
-  color: "#FDC28F",
-  border: "2px dashed #FDC28F",
+  color: "#F39636",
+  border: "2px dashed #F39636",
   padding: "20px",
   fontWeight: 600,
   fontSize: "1.2em"
