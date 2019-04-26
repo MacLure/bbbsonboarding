@@ -14,10 +14,19 @@ class ConfirmationPage extends Component {
           <Header />
         </div>
         <div style={styles.contentWrap}>
-          <div>CONFIRMATION PAGE</div>
+          <div style={styles.message}>
+            We're looking forward to meeting you at our upcoming Info Session!
+          </div>
+
           <InfoSession />
           <br />
-          <Link to={`/dashboard`}>CONFIRM</Link>
+          <div style={styles.instructions}>
+            To track your progress on your journey to becoming a Big, please
+            check out your dashboard:
+          </div>
+          <Link to={`/dashboard`}>
+            <div style={styles.confirmButton}>YOUR DASHBOARD >></div>
+          </Link>
         </div>
         <div style={styles.footer}>
           <Footer />
@@ -57,4 +66,26 @@ styles.yourInfoSession = {
   color: "#663399",
   fontWeight: 800,
   fontSize: " 1.5em"
+};
+
+styles.message = {
+  marginTop: "20px",
+  marginBottom: "20px",
+  fontSize: "30px",
+  wontWeight: 600
+};
+
+styles.instructions = {
+  margin: "30px",
+  fontSize: "20px"
+};
+
+styles.confirmButton = {
+  backgroundColor: "#663399",
+  padding: "20px",
+  width: "200px",
+  margin: "20px auto",
+  textDecorationLine: "none",
+  color: "white",
+  fontWeight: 600
 };

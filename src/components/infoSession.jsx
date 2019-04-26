@@ -5,10 +5,11 @@ class InfoSession extends Component {
   render() {
     return (
       <div style={styles.eventBox}>
-        <div>Wed, May 15</div>
-        <div>6:00 PM - 7:30 PM</div>
-        <div>BIGS 101</div>
-        <div>INFO SESSION</div>
+        <div style={styles.eventTitle}>BIGS 101</div>
+        <div style={styles.eventDesc}>INFO SESSION</div>
+        <div stlye={styles.eventDateMonth}>MAY</div>
+        <div stlye={styles.eventDateDate}>12</div>
+        <div stlye={styles.eventDateDay}>WEDNESDAY</div>
         <div>Yonge & Eglinton Office</div>
         <div>2345 Yonge St. Suite 501</div>
       </div>
@@ -30,4 +31,27 @@ styles.eventBox = {
   width: "200px",
   height: "200px",
   fontSize: "14px"
+};
+
+styles.eventTitle = {
+  fontSize: "40px",
+  fontWeight: 800
+};
+
+styles.eventDesc = {
+  fontSize: "20px"
+};
+
+styles.eventDateMonth = {
+  fontSize: "40px",
+  fontWeight: 800
+};
+
+styles.eventDateLeft = {
+  gridColumnStart: 1
+};
+
+styles.eventDateDate = {
+  fontSize: "40px",
+  fontWeight: 800
 };
