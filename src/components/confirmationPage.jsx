@@ -4,6 +4,11 @@ import Header from "./header";
 import Footer from "./footer";
 import InfoSession from "./infoSession";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import {
+  submitRegistrationData,
+  checkProgress
+} from "./../actions/registrationActions";
 
 class ConfirmationPage extends Component {
   state = {};
@@ -15,14 +20,14 @@ class ConfirmationPage extends Component {
         </div>
         <div style={styles.contentWrap}>
           <div style={styles.message}>
-            We're looking forward to meeting you at our upcoming Info Session!
+            We're looking forward to meeting you at our upcoming Info Session,{" "}
+            {this.props.data.full_name}!
           </div>
 
           <InfoSession />
           <br />
           <div style={styles.instructions}>
-            To track your progress on your journey to becoming a Big, please
-            check out your dashboard:
+            Keep track of your application progress on your dashboard:
           </div>
           <Link to={`/dashboard`}>
             <div style={styles.confirmButton}>YOUR DASHBOARD >></div>
@@ -36,7 +41,27 @@ class ConfirmationPage extends Component {
   }
 }
 
-export default ConfirmationPage;
+const mapStateToProps = state => {
+  return {
+    data: state.registrationReducer
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    submitRegistrationData: data => {
+      dispatch(submitRegistrationData(data));
+    },
+    checkProgress: stage => {
+      dispatch(checkProgress(stage));
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConfirmationPage);
 
 const styles = {};
 

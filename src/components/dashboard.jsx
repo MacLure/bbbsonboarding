@@ -11,6 +11,7 @@ import InfoSession from "./infoSession";
 import Dashboard1 from "./dashboard1";
 import Dashboard2 from "./dashboard2";
 import Dashboard3 from "./dashboard3";
+import UserDetails from "./userDetails";
 
 class Dashboard extends Component {
   state = {};
@@ -26,6 +27,7 @@ class Dashboard extends Component {
           <Header />
         </div>
         <div style={styles.contentWrap}>
+          <UserDetails />
           <ProgressBar
             big101={this.props.data.big101}
             application={this.props.data.application}
