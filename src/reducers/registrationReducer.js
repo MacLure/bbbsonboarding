@@ -8,10 +8,13 @@ const registrationReducer = (
   action
 ) => {
   switch (action.type) {
-    case "UPDATE_REGISTRATION_DATA":
+    case "SUBMIT_REGISTRATION_DATA":
       state = {
         ...state,
-        full_name: action.payload
+        full_name: action.payload.full_name,
+        city: action.payload.city,
+        phone: action.payload.phone,
+        email: action.payload.email
       };
       break;
   }

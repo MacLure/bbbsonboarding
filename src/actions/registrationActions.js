@@ -1,3 +1,3 @@
-export function updateRegistrationData(data) {
-  return { type: "UPDATE_REGISTRATION_DATA", payload: data };
+export function submitRegistrationData(data) {
+  return { type: "SUBMIT_REGISTRATION_DATA", payload: data };
 }

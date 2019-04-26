@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { submitRegistrationData } from "./../actions/registrationActions";
 
 class RegistrationForm extends Component {
   constructor(props) {
@@ -12,17 +13,23 @@ class RegistrationForm extends Component {
       email: ""
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.submitRegistrationData(this.state);
   }
 
   render() {
     return (
       <div>
         Registration Form
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="full_name">Full Name</label>
             <input
@@ -92,11 +99,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateRegistrationData: name => {
-      dispatch({
-        type: "UPDATE_REGISTRATION_DATA",
-        payload: name
-      });
+    submitRegistrationData: data => {
+      dispatch(submitRegistrationData(data));
     }
   };
 };
