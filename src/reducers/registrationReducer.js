@@ -4,7 +4,7 @@ const registrationReducer = (
     city: "DEFAULT_CITY",
     phone: "DEFAULT_PHONE",
     email: "DEFAULT_EMAIL",
-    big101: true,
+    big101: false,
     application: false,
     vss: false,
     assessmentInterview: false,
@@ -21,6 +21,12 @@ const registrationReducer = (
         city: action.payload.city,
         phone: action.payload.phone,
         email: action.payload.email
+      };
+      break;
+    case "CHECK_PROGRESS":
+      state = {
+        ...state,
+        [action.payload]: true
       };
       break;
   }
