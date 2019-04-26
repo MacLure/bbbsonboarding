@@ -1,23 +1,8 @@
 import React from "react";
 import "./App.css";
-import RegistrationForm from "./components/registrationForm";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
 function App() {
-  return (
-    <div style={styles.pageContainer} className="App">
-      <div style={styles.header}>
-        <Header />
-      </div>
-      <div style={styles.contentWrap}>
-        <RegistrationForm />
-      </div>
-      <div style={styles.footer}>
-        <Footer />
-      </div>
-    </div>
-  );
+  return <div />;
 }
 
 export default App;

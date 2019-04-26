@@ -3,7 +3,13 @@ const registrationReducer = (
     full_name: "DEFAULT_NAME",
     city: "DEFAULT_CITY",
     phone: "DEFAULT_PHONE",
-    email: "DEFAULT_EMAIL"
+    email: "DEFAULT_EMAIL",
+    big101: true,
+    application: false,
+    vss: false,
+    assessmentInterview: false,
+    training: false,
+    match: false
   },
   action
 ) => {
