@@ -1,16 +1,16 @@
 import React from "react";
 import "./App.css";
 import RegistrationForm from "./components/registrationForm";
-import Navbar from "./components/navbar";
+import Header from "./components/header";
 import Footer from "./components/footer";
 
 function App() {
   return (
     <div style={styles.pageContainer} className="App">
       <div style={styles.header}>
-        <Navbar />
+        <Header />
       </div>
-      <div>
+      <div style={styles.contentWrap}>
         <RegistrationForm />
       </div>
       <div style={styles.footer}>
@@ -24,11 +24,13 @@ export default App;
 
 const styles = {};
 
-styles.header = {};
-
 styles.pageContainer = {
   position: "relative",
   minHeight: "100vh"
+};
+
+styles.contentWrap = {
+  paddingBottom: "400px"
 };
 
 styles.footer = {
