@@ -5,8 +5,9 @@ import {
   checkProgress
 } from "../actions/registrationActions";
 import InfoSession from "./infoSession";
+import ApplicationForm from "./applicationForm";
 
-class Dashboard1 extends Component {
+class Dashboard2 extends Component {
   state = {};
 
   updateProgress = stage => {
@@ -17,19 +18,16 @@ class Dashboard1 extends Component {
     return (
       <div style={styles.dashboard1Container}>
         <div>
-          <div style={styles.yourInfoSession}>Your Info Session:</div>
-          <div
-            onClick={e => {
-              this.updateProgress("big101");
-            }}
-          >
-            <InfoSession />
-            <div style={styles.orangeBox}>Change Appointment</div>
+          <div style={styles.vssContainer}>
+            <span style={styles.vssHeading}>Vulnerable Sector Check</span>
+            <div>Please obtain and upload a vulnerable sectore check.</div>
+            <br />
+            <div>
+              More information on how to obtain one can be found here...
+            </div>
           </div>
         </div>
         <div style={styles.inactiveContainer}>
-          <div style={styles.inactiveSteps}>Application Form</div>
-          <div style={styles.inactiveSteps}>Vulnerable Sector Check</div>
           <div style={styles.inactiveSteps}>Assessmenbt Interview</div>
           <div style={styles.inactiveSteps}>Training Materials</div>
         </div>
@@ -58,7 +56,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Dashboard1);
+)(Dashboard2);
 
 const styles = {};
 
@@ -66,20 +64,8 @@ styles.dashboard1Container = {
   display: "grid",
   gridTemplateColumns: "1fr 1fr"
 };
-
-styles.orangeBox = {
-  margin: "20px auto",
-  width: "180px",
-  color: "#F39636",
-  border: "2px dashed #F39636",
-  padding: "20px",
-  fontWeight: 600,
-  fontSize: "1em"
-};
-
-styles.yourInfoSession = {
-  fontSize: "1.2em",
-  fontWeight: 600
+styles.vssContainer = {
+  marginTop: "30px"
 };
 
 styles.inactiveContainer = {
@@ -99,4 +85,9 @@ styles.inactiveSteps = {
   writingMode: "tb-rl",
   padding: "10px",
   borderRadius: " 5px"
+};
+
+styles.vssHeading = {
+  fontWeight: 600,
+  fontSize: "1.2em"
 };

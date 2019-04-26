@@ -5,8 +5,9 @@ import {
   checkProgress
 } from "../actions/registrationActions";
 import InfoSession from "./infoSession";
+import ApplicationForm from "./applicationForm";
 
-class Dashboard1 extends Component {
+class Dashboard2 extends Component {
   state = {};
 
   updateProgress = stage => {
@@ -17,18 +18,15 @@ class Dashboard1 extends Component {
     return (
       <div style={styles.dashboard1Container}>
         <div>
-          <div style={styles.yourInfoSession}>Your Info Session:</div>
           <div
             onClick={e => {
-              this.updateProgress("big101");
+              this.updateProgress("application");
             }}
           >
-            <InfoSession />
-            <div style={styles.orangeBox}>Change Appointment</div>
+            <ApplicationForm />
           </div>
         </div>
         <div style={styles.inactiveContainer}>
-          <div style={styles.inactiveSteps}>Application Form</div>
           <div style={styles.inactiveSteps}>Vulnerable Sector Check</div>
           <div style={styles.inactiveSteps}>Assessmenbt Interview</div>
           <div style={styles.inactiveSteps}>Training Materials</div>
@@ -58,7 +56,7 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Dashboard1);
+)(Dashboard2);
 
 const styles = {};
 

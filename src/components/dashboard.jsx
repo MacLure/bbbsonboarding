@@ -9,6 +9,8 @@ import Footer from "./footer";
 import ProgressBar from "./progressBar";
 import InfoSession from "./infoSession";
 import Dashboard1 from "./dashboard1";
+import Dashboard2 from "./dashboard2";
+import Dashboard3 from "./dashboard3";
 
 class Dashboard extends Component {
   state = {};
@@ -32,7 +34,15 @@ class Dashboard extends Component {
             training={this.props.data.training}
             match={this.props.data.match}
           />
-          <Dashboard1 />
+          {!this.props.data.big101 ? <Dashboard1 /> : null}
+          {this.props.data.big101 && !this.props.data.application ? (
+            <Dashboard2 />
+          ) : null}
+          {this.props.data.big101 &&
+          this.props.data.application &&
+          !this.props.data.vss ? (
+            <Dashboard3 />
+          ) : null}
           <div>
             {this.props.data.full_name} | {this.props.data.city} |{" "}
             {this.props.data.phone} | {this.props.data.email}
