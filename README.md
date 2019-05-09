@@ -1,6 +1,6 @@
 ## Complete the Journey
 
-My team's entry in the Big Brothers Big Sisters Canada Hackathon (April 2019).  This app is our solution to the problem of unconverted volunteers lost during the onboarding process.  By providing an applicant dashboard with a clear roadmap, we aimed to increase the volunteer conversion rate in the onboarding process.
+My team's entry in the Big Brothers Big Sisters Canada Hackathon (April 2019).  This app is our solution to the problem of  volunteer churn during the onboarding process.  By providing an applicant dashboard with a clear roadmap, we aimed to increase the volunteer conversion rate in the onboarding process.
 
 ### 🚀 Launch the app:
 1. You must have [Node.js](Node.js) installed on your computer.
